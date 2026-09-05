@@ -43,7 +43,7 @@ Nhiệm vụ của hàm `dp_solve` là tìm ra một đường đi xuyên qua c�
   $$DP[i][t] = Score(E_i, t) + \max_{t_{prev} < t} \big[ DP[i-1][t_{prev}] - \lambda \times (t - t_{prev}) \big]$$
   
   Bản chất công thức này là sự tính toán đánh đổi (Trade-off), được cấu thành từ 2 phần cốt lõi:
-  1. **Điểm nội tại (Score(E_i, t)):** Đại diện cho độ khớp không gian (Cosine Score). Bức ảnh tại giây $t$ giống với mô tả văn bản của sự kiện $E_i$ đến mức nào. Điểm này càng gần 1.0 càng tốt.
+  1. **Điểm nội tại $(Score(E_i, t))$:** Đại diện cho độ khớp không gian (Cosine Score). Bức ảnh tại giây $t$ giống với mô tả văn bản của sự kiện $E_i$ đến mức nào. Điểm này càng gần 1.0 càng tốt.
   2. **Điểm kế thừa & Phạt thời gian (Cụm $\max$ phía sau):** Để quyết định chọn ảnh ở giây $t$, hệ thống phải tìm lại khung hình của sự kiện trước đó ($E_{i-1}$) nằm ở một mốc thời gian trong quá khứ ($t_{prev} < t$).
      * Nó sẽ lấy điểm tích lũy từ quá khứ: $DP[i-1][t_{prev}]$.
      * Tuy nhiên, hệ thống áp dụng một đòn bẩy là hệ số $\lambda$ (`lambda_penalty`). Khoảng cách giữa 2 sự kiện ($t - t_{prev}$) càng lớn, phép nhân $\lambda \times (t - t_{prev})$ sinh ra một lượng điểm trừ (Penalty) càng khổng lồ.
