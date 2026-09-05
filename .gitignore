@@ -1,0 +1,14 @@
+# Bỏ qua bộ dataset ảnh và file map
+Keyframes/
+mapkeyframes/
+trake_submission/
+*.zip
+*.csv
+
+# Bỏ qua file rác Jupyter và Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Bỏ qua file môi trường chứa API Key thật
+.env
