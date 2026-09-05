@@ -37,7 +37,7 @@ Nhiệm vụ của hàm `dp_solve` là tìm ra một đường đi xuyên qua c�
   
   $\Rightarrow$ *Ý nghĩa:* Logic này triệt tiêu hoàn toàn các video nhiễu (ví dụ: cảnh $E_1$ khớp 100% nhưng lại không hề có $E_2, E_3$), giúp DANTE dồn tài nguyên xử lý đúng những video bám sát trọn vẹn kịch bản nhất.
 * **Phân tích phương trình trạng thái:**
-  Sau khi có 30 video tiềm năng, dùng quy hoạch động để dò tìm chuỗi khung hình tốt nhất bên trong từng video. Thuật toán khởi tạo một ma trận $DP[i][t]$, mang ý nghĩa: *Tổng điểm cực đại đạt được khi ghép xong $i$ sự kiện đầu tiên, và sự kiện thứ $i$ kết thúc chính xác tại khung hình ở mốc thời gian $t$*.
+  Sau khi có 30 video tiềm năng, dùng quy hoạch động để dò tìm chuỗi khung hình tốt nhất bên trong từng video. Thuật toán khởi tạo một ma trận $DP[i][t]$, mang ý nghĩa: *Tổng điểm cực đại đạt được khi ghép xong i sự kiện đầu tiên, và sự kiện thứ i kết thúc chính xác tại khung hình ở mốc thời gian t*.
   
   Cốt lõi của thuật toán nằm ở phương trình chuyển trạng thái sau:
   $$DP[i][t] = Score(E_i, t) + \max_{t_{prev} < t} \big[ DP[i-1][t_{prev}] - \lambda \times (t - t_{prev}) \big]$$
