@@ -28,7 +28,7 @@ Bài toán thực tế thường có các truy vấn dài dòng chứa nhiều t
 **Tại sao phải dùng Quy hoạch động?**
 Vấn đề cốt lõi của Giai đoạn 1 (Vector Search bằng Pinecone) là nó chấm điểm hoàn toàn dựa trên thị giác và mất khái niệm về dòng thời gian. Khi truy vấn song song, Pinecone có thể tìm thấy cảnh $E_1$ khớp nhất nằm ở phút 50, và cảnh $E_2$ khớp nhất nằm ở phút 10. Nếu cứ lấy Top 1 của mỗi tập kết quả, dòng thời gian sẽ bị chạy ngược ($t_1 > t_2$). Do đó, đầu ra của Bước 1 chỉ là các tập kết quả chứa hàng ngàn khung hình rời rạc, sai lệch thứ tự.
 
-Nhiệm vụ của hàm `solve_dante` là tìm ra một đường đi xuyên qua các tập kết quả này sao cho tổng điểm cao nhất nhưng vẫn phải đúng trình tự thời gian $t_1 < t_2 < ... < t_N$:
+Nhiệm vụ của hàm `dp_solve` là tìm ra một đường đi xuyên qua các tập kết quả này sao cho tổng điểm cao nhất nhưng vẫn phải đúng trình tự thời gian $t_1 < t_2 < ... < t_N$:
 
 * **Lọc video rác (Voting):** Việc đẩy toàn bộ hàng ngàn video từ Giai đoạn 1 vào ma trận DP sẽ lập tức làm tràn RAM (OOM). Để giải quyết, hệ thống áp dụng cơ chế đếm phiếu để lọc ra đúng 30 video tiềm năng nhất:
   * **Tiêu chí 1 (Độ phủ):** Video chứa bao nhiêu sự kiện con ($E_i$) thì được bấy nhiêu phiếu.
