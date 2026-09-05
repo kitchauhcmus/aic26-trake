@@ -1,0 +1,11 @@
+pinecone-client
+transformers
+pandas
+google-genai
+nltk
+underthesea
+rapidfuzz
+deep-translator
+torch
+torchvision
+Pillow
