@@ -35,7 +35,7 @@ Nhiệm vụ của hàm `dp_solve` là tìm ra một đường đi xuyên qua c�
   * **Tiêu chí 2 (Điểm trần):** Nếu các video bằng phiếu nhau, hệ thống phân định bằng cách tính tổng điểm Cosine cao nhất của từng sự kiện bên trong video đó.
   * **Lọc Top-K:** Sắp xếp danh sách giảm dần theo ưu tiên `(Số phiếu, Điểm trần)` rồi cắt lấy đúng 30 video đứng đầu.
   
-  $\Rightarrow$ *Ý nghĩa:* Logic này triệt tiêu hoàn toàn các video nhiễu (ví dụ: cảnh $E_1$ khớp 100% nhưng lại không hề có $E_2, E_3$), giúp DANTE dồn tài nguyên xử lý đúng những video bám sát trọn vẹn kịch bản nhất.
+  $\Rightarrow$ *Ý nghĩa:* Logic này triệt tiêu hoàn toàn các video nhiễu (ví dụ: cảnh $E_1$ khớp 100% nhưng lại không hề có $E_2, E_3$), giúp quy hoạch động dồn tài nguyên xử lý đúng những video bám sát trọn vẹn kịch bản nhất.
 * **Phân tích phương trình trạng thái:**
   Sau khi có 30 video tiềm năng, dùng quy hoạch động để dò tìm chuỗi khung hình tốt nhất bên trong từng video. Thuật toán khởi tạo một ma trận $DP[i][t]$, mang ý nghĩa: *Tổng điểm cực đại đạt được khi ghép xong i sự kiện đầu tiên, và sự kiện thứ i kết thúc chính xác tại khung hình ở mốc thời gian t*.
   
