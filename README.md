@@ -84,6 +84,6 @@ Mở tệp mã nguồn notebook, thay thế các API Key ở **[BLOCK 1]**:
 ### 3.3. Quy trình Thực thi
 1. Mở file `.ipynb` trên Google Colab.
 2. Chọn `Runtime` -> `Change runtime type` -> **T4 GPU** (Bắt buộc để chạy SigLIP FP16).
-3. Chạy toàn bộ các ô lệnh (Run All). Hệ thống sẽ tự động bóc tách truy vấn, chạy DANTE, chấm điểm bằng VLM và xuất kết quả.
+3. Chạy toàn bộ các ô lệnh (Run All). Hệ thống sẽ tự động bóc tách truy vấn, chạy quy hoạch động, chấm điểm bằng VLM và xuất kết quả.
 4. Top 100 kết quả sẽ được ghi xuất ra thư mục `trake_submission` và tự động nén thành `submission.zip` tải xuống máy.
 5. Ô lệnh cuối cùng sẽ khởi chạy giao diện **Gradio Web UI** (có link Public) để đội trực quan hóa và kiểm định chất lượng các khung hình.
