@@ -10,5 +10,4 @@ deep-translator
 torch
 torchvision
 Pillow
-gradio==4.44.1
-websockets>=15.0
+
