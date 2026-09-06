@@ -59,7 +59,7 @@ Nhiệm vụ của hàm `dp_solve` là tìm ra một đường đi xuyên qua c�
   1. *Luật Văn bản (OCR):* Yêu cầu sự trùng khớp tuyệt đối về chữ viết. Nếu truy vấn có nhắc đến tên riêng, nhãn hiệu hoặc một đoạn văn bản cụ thể, khung hình bắt buộc phải chứa đúng chuỗi ký tự đó. Các trường hợp chỉ giống nhau về hình thức bề ngoài của đồ vật nhưng sai lệch chữ viết đều bị loại bỏ.
   2. *Luật Công cụ (Tools):* Yêu cầu tính hợp lý của hành động vật lý. Các công cụ, dụng cụ xuất hiện trong tay nhân vật phải tương thích chính xác với động từ thao tác được miêu tả trong truy vấn. Mọi sự đánh tráo hay sai lệch về loại công cụ thao tác đều dẫn đến kết quả bị hủy.
   3. *Luật Vật thể (Objects):* Yêu cầu nhận diện chuẩn xác thực thể trọng tâm. Khung hình phải chứa đúng đối tượng được yêu cầu dựa trên các đặc trưng sinh trắc, chủng loại hoặc màu sắc. Những khung hình bị trùng khớp giả do thuật toán vector phân loại nhầm sẽ bị phát hiện và đánh trượt ngay lập tức.
-* Để bóc tách điểm số tự động, VLM bị ép (khóa `temperature=0.0`) phải trả về đúng định dạng chuẩn `JSON`. Đặc biệt, trong vòng lặp thẩm định Top 30, nếu hệ thống phát hiện một chuỗi được VLM chấm $\ge 0.95$ điểm, vòng lặp sẽ lập tức ngắt. Chuỗi đó được chốt làm kết quả cuối cùng, giúp đội thi tiết kiệm đáng kể thời gian chạy code và hạn mức gọi API. 
+* Để bóc tách điểm số tự động, VLM bị ép (khóa `temperature=0.0`) phải trả về đúng định dạng chuẩn `JSON`. Đặc biệt, trong vòng lặp thẩm định Top 30, nếu hệ thống phát hiện một chuỗi được VLM chấm $\ge 0.95$ điểm, vòng lặp sẽ lập tức ngắt. Chuỗi đó được chốt làm kết quả cuối cùng, giúp tiết kiệm đáng kể thời gian chạy code và hạn mức gọi API. 
 
 ## 🚀 3. Hướng dẫn Cài đặt & Chạy
 
