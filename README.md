@@ -4,7 +4,7 @@
 
 ## Lời mở đầu
 
-AI Challenge HCMC là một cuộc thi đòi hỏi kỹ năng phân tích và truy xuất thông tin trên tập dữ liệu multimedia khổng lồ. Trong kho lưu trữ này, tôi trình bày mã nguồn và giải pháp cá nhân được tinh chỉnh chuyên biệt để xử lý track phức tạp nhất của cuộc thi: **TRAKE (Temporal Retrieval and Alignment of Key Events)**.
+AI Challenge HCMC là một cuộc thi đòi hỏi kỹ năng phân tích và truy xuất thông tin trên tập dữ liệu multimedia khổng lồ. Trong kho lưu trữ này, tôi trình bày mã nguồn và giải pháp được tinh chỉnh chuyên biệt để xử lý track phức tạp nhất của cuộc thi: **TRAKE (Temporal Retrieval and Alignment of Key Events)**.
 
 ---
 
