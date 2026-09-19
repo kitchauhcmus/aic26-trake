@@ -1,6 +1,6 @@
 # 🔗 AIC26_TRAKE
 
-*Developed by Nguyễn Châu Tuấn Kiệt - 25TNT1, VNUHCM-US (AIC HCMC 2026)*
+*Thực hiện bởi Nguyễn Châu Tuấn Kiệt - 25TNT1, VNUHCM-US (AIC HCMC 2026)*
 
 ## Lời mở đầu
 
