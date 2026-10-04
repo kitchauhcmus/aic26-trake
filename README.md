@@ -8,7 +8,7 @@ AI Challenge HCMC là một cuộc thi đòi hỏi kỹ năng phân tích và tr
 
 ---
 
-## 🎯 1. Tổng quan bài toán
+## 1. Tổng quan bài toán
 Khác với các bài toán truy xuất hình ảnh đơn lẻ, bài toán TRAKE đặt ra một thử thách phức tạp hơn nhiều về mặt thời gian và ngữ nghĩa. Cho một truy vấn chứa một chuỗi các sự kiện con $E_1, E_2, ..., E_N$, hệ thống không chỉ phải tìm đúng khung hình miêu tả từng sự kiện, mà còn phải thỏa mãn các ràng buộc sau:
 1. **Tính tuần tự:** Các sự kiện phải diễn ra đúng thứ tự thời gian $t_1 < t_2 < ... < t_N$ trong cùng một video.
 2. **Tính liên tục:** Các khung hình không được nằm quá xa nhau, tránh hiện tượng chắp vá các cảnh rời rạc.
@@ -16,7 +16,7 @@ Khác với các bài toán truy xuất hình ảnh đơn lẻ, bài toán TRAKE
 
 ---
 
-## 🧠 2. Chi tiết kỹ thuật: 
+## 2. Chi tiết kỹ thuật: 
 Để giải quyết bài toán tìm kiếm chuỗi sự kiện, hệ thống hoạt động qua 3 bước rất rõ ràng: **Lọc thô (Vector Search)** để tìm nhanh các cảnh rời rạc $\rightarrow$ **Ráp chuỗi (Dynamic Programming)** để xếp các cảnh đúng trình tự thời gian $\rightarrow$ **Kiểm tra chéo (VLM)** để đối chiếu trực tiếp với khung hình thực tế và trích xuất kết quả cuối cùng. Dưới đây là chi tiết cách hệ thống vận hành.
 
 ### 2.1. Giai đoạn 1: Xử lý truy vấn & Lọc không gian mẫu
@@ -61,7 +61,7 @@ Nhiệm vụ của hàm `dp_solve` là tìm ra một đường đi xuyên qua c�
   3. *Luật Vật thể (Objects):* Yêu cầu nhận diện chuẩn xác thực thể trọng tâm. Khung hình phải chứa đúng đối tượng được yêu cầu dựa trên các đặc trưng sinh trắc, chủng loại hoặc màu sắc. Những khung hình bị trùng khớp giả do thuật toán vector phân loại nhầm sẽ bị phát hiện và đánh trượt ngay lập tức.
 * Để bóc tách điểm số tự động, VLM bị ép (khóa `temperature=0.0`) phải trả về đúng định dạng chuẩn `JSON`. Đặc biệt, trong vòng lặp thẩm định Top 30, nếu hệ thống phát hiện một chuỗi được VLM chấm $\ge 0.95$ điểm, vòng lặp sẽ lập tức ngắt. Chuỗi đó được chốt làm kết quả cuối cùng, giúp tiết kiệm đáng kể thời gian chạy code và hạn mức gọi API. 
 
-## 🚀 3. Hướng dẫn Cài đặt & Chạy
+## 3. Hướng dẫn Cài đặt & Chạy
 
 ### 3.1. Chuẩn bị Dữ liệu (Google Drive)
 Hệ thống yêu cầu mount trực tiếp vào Google Drive. Đảm bảo cấu trúc cây thư mục (Directory Tree) tại đường dẫn gốc `/content/drive/MyDrive/AIC26/` tuân thủ định dạng sau:
